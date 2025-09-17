@@ -14,6 +14,7 @@ const login_req = async (email, password) => {
 
   if (response.data.token) {
       console.log(response.data)
+      console.log("checked login_req inauthService page");
       localStorage.setItem("user", JSON.stringify(response.data));
       window.location.reload()
   }
@@ -38,6 +39,7 @@ const resendRegistrationVerificationCode = async(email) => {
 }
 
 const getCurrentUser = () => {
+  console.log(JSON.parse(localStorage.getItem("user")));
   return JSON.parse(localStorage.getItem("user"));
 };
 
